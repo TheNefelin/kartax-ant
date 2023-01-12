@@ -1,0 +1,106 @@
+
+/* Fuentes ------------------------------------------ */
+@font-face {
+    font-family: fuenteCursiva;
+    src: url("../fuente/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: fuenteGeneral;
+    src: url("../fuente/Merriweather-Regular.ttf");
+}
+
+@font-face {
+    font-family: fuenteTitulo;
+    src: url("../fuente/PermanentMarker-Regular.ttf");
+}
+
+:root {
+    --colorNavBArFondo: black;
+    --colorLink: white;
+    --colorLinkHover: red;
+    --colorTesting: green;
+}
+
+/* -- Config Elementos Generales -------------------- */
+* {
+    font-family: fuenteGeneral;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorLink);
+}
+
+a:hover {
+    color: var(--colorLinkHover);
+    font-size: 1.2em;
+}
+
+/* -- NavBar ---------------------------------------- */
+.navBar-contenedor {
+    background-color: var(--colorNavBArFondo);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.navBar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navBar-logo:hover {
+    font-size: 1rem;
+    color: var(--colorLink);
+}
+
+.navBar-logo img {
+    height: 45px;
+}
+
+.navBar-btn {
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+}
+
+.navBar-btnD1, .navBar-btnD2, .navBar-btnD3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--colorLink);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.navBar-btn_click .navBar-btnD1 {
+    transform: translateY(11px) rotate(45deg);
+    background-color: var(--colorLinkHover);
+}
+
+.navBar-btn_click .navBar-btnD2 {
+    opacity: 0;
+}
+
+.navBar-btn_click .navBar-btnD3 {
+    transform: translateY(-11px) rotate(-45deg);
+    background-color: var(--colorLinkHover);
+}
+
+.prueba {
+    background-color: pink;
+}
+
+.navBar-links > a {
+    margin-left: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .navBar-btn {
+        display: block;
+    }
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
