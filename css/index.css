@@ -1,5 +1,6 @@
 
-/* -- Fuentes --------------------------------------- */
+/* -- Fuentes ----------------------------------------------------- */
+/* ---------------------------------------------------------------- */
 @font-face {
     font-family: fuenteCursiva;
     src: url("../fuente/Caveat-VariableFont_wght.ttf");
@@ -22,7 +23,8 @@
     --colorTesting: green;
 }
 
-/* -- Config Elementos Generales -------------------- */
+/* -- Config Elementos Generales ---------------------------------- */
+/* ---------------------------------------------------------------- */
 * {
     font-family: fuenteGeneral;
 }
@@ -38,9 +40,11 @@ a:hover {
     font-size: 1.2em;
 }
 
-/* -- NavBar ---------------------------------------- */
+/* -- NavBar ------------------------------------------------------ */
+/* ---------------------------------------------------------------- */
 .navBar-contenedor {
     position: fixed;
+    top: 0;
     z-index: 1;
     background-color: var(--colorNavBarFondo);
     display: flex;
@@ -70,7 +74,7 @@ a:hover {
     animation: logoTxtAnim 4s infinite;
 }
 
-@keyframes logoTxtAnim {
+@keyframes animLogoH1 {
     0% {
         color: var(--colorLinkHover);
     }
@@ -140,23 +144,27 @@ a:hover {
     }
 }
 
-/* -- Carousel -------------------------------------- */
+/* -- Carousel ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
 .carrusel-contenedor {
-    padding-top: 90px;
+    background-color: coral;
+    position: relative;
+    
 }
 
-.carrusel-img {
-    display: none;
+.carrusel-contenedor img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    max-height: 500px;
 }
 
-.btnImgAnt, .btnImgProx {
+.carrusel-contenedor p {
     background-color: red;
-    cursor: pointer;
-    /* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+
+    text-align: center;
 }
 
-
-/* -------------------------------------------------- */
-/* -------------------------------------------------- */
-
-
+/* ---------------------------------------------------------------- */
+/* ---------------------------------------------------------------- */
