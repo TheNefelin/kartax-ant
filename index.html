@@ -19,19 +19,55 @@
                 <img src="./img/logo_01.png" alt="">
                 <h1>Kartax</h1>
             </a>
-            <div class="navBar-btn" onclick="navBarBtn_click(this)">
+            <div class="navBar-btn" onclick="navBarBtn_click()">
                 <div class="navBar-btnD1"></div>
                 <div class="navBar-btnD2"></div>
                 <div class="navBar-btnD3"></div>
             </div>
-            <div class="navBar-links"></div>
+            <div class="navBar-links">
+                <!-- Los links se cargan de forma dinamiga desde getMenuLinks() -->
+            </div>
         </nav>
     </header>
 
+    <!-- Contenedor Principal ------------------------->
     <main>
-
+        <!-- Slideshow container -->
+        <div class="carrusel-contenedor">
+            <!-- Full-width images with number and caption text -->
+            <div class="carrusel-img fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="./img/grupo_01.jpg" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
+        
+            <div class="carrusel-img fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="./img/grupo_02.jpg" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+        
+            <div class="carrusel-img fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="./img/grupo_03.jpg" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="btnImgAnt" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="btnImgProx" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </main>
     
+    <!-- Pie ------------------------------------------>
     <footer>
 
     </footer>

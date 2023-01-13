@@ -1,5 +1,5 @@
 
-/* Fuentes ------------------------------------------ */
+/* -- Fuentes --------------------------------------- */
 @font-face {
     font-family: fuenteCursiva;
     src: url("../fuente/Caveat-VariableFont_wght.ttf");
@@ -11,14 +11,14 @@
 }
 
 @font-face {
-    font-family: fuenteTitulo;
+    font-family: fuenteLogo;
     src: url("../fuente/PermanentMarker-Regular.ttf");
 }
 
 :root {
-    --colorNavBArFondo: black;
+    --colorNavBarFondo: rgb(0, 0, 0);
     --colorLink: white;
-    --colorLinkHover: red;
+    --colorLinkHover: rgb(255, 169, 58);
     --colorTesting: green;
 }
 
@@ -28,8 +28,9 @@
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: var(--colorLink);
+    transition: 0.3s;
 }
 
 a:hover {
@@ -39,11 +40,14 @@ a:hover {
 
 /* -- NavBar ---------------------------------------- */
 .navBar-contenedor {
-    background-color: var(--colorNavBArFondo);
+    position: fixed;
+    z-index: 1;
+    background-color: var(--colorNavBarFondo);
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 60px;
+    width: 100%;
 }
 
 .navBar-logo {
@@ -52,13 +56,31 @@ a:hover {
 }
 
 .navBar-logo:hover {
-    font-size: 1rem;
-    color: var(--colorLink);
+    font-size: 100%;
+    text-decoration: none;
 }
 
 .navBar-logo img {
     height: 45px;
+    margin-right: 10px;
 }
+
+.navBar-logo h1 {
+    font-family: fuenteLogo;
+    animation: logoTxtAnim 4s infinite;
+}
+
+@keyframes logoTxtAnim {
+    0% {
+        color: var(--colorLinkHover);
+    }
+    50% {
+        color: var(--colorLink);
+    }
+    100% {
+        color: var(--colorLinkHover);
+    }
+  }
 
 .navBar-btn {
     display: inline-block;
@@ -70,6 +92,7 @@ a:hover {
     width: 35px;
     height: 5px;
     background-color: var(--colorLink);
+    border-radius: 4px;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -88,10 +111,6 @@ a:hover {
     background-color: var(--colorLinkHover);
 }
 
-.prueba {
-    background-color: pink;
-}
-
 .navBar-links > a {
     margin-left: 10px;
 }
@@ -100,7 +119,44 @@ a:hover {
     .navBar-btn {
         display: block;
     }
+
+    .navBar-links {
+        position: fixed;
+        display: grid;
+        top: 60px;
+        background-color: var(--colorNavBarFondo);
+        text-align: center;
+        width: 100%;
+        left: 100%;
+        transition: 0.4s;
+    }
+
+    .navBar-links_noOcultar {
+        left: 0;
+    }
+
+    .navBar-links a {
+        padding: 10px;
+    }
 }
+
+/* -- Carousel -------------------------------------- */
+.carrusel-contenedor {
+    padding-top: 90px;
+}
+
+.carrusel-img {
+    display: none;
+}
+
+.btnImgAnt, .btnImgProx {
+    background-color: red;
+    cursor: pointer;
+    /* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+}
+
 
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
+
+
