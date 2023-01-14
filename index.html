@@ -15,7 +15,7 @@
     <!-- NavBar --------------------------------------->
     <header>
         <nav class="navBar-contenedor">
-            <a class="navBar-logo" href="#">
+            <a class="navBar-logo" href="#" onclick="acordion_llenarItems()">
                 <img src="./img/logo_01.png" alt="">
                 <h1>Kartax</h1>
             </a>
@@ -33,40 +33,26 @@
     <!-- Contenedor Principal ------------------------->
     <main class="main-contenedor">
 
-
-        <!-- Btn -------------------------------------->
-        <button class="btn animacion"><span>Botón</span></button>
-
-        <div>
-            
-        </div>
-
         <!-- Carrito ---------------------------------->
         <button class="carrito">
             <img src="./img/cart.svg">
-            <span class="carrito-cont">
-                <p>0</p>    
-            </span>
+            <span class="carrito-cont">0</span>
         </button>
-    
+
         <!-- Acordion  -------------------------------->
-        <button class="acordion" onclick="acordion_click(this)">Toroballo</button>
-        <div class="acordion-contenido">
-            <img class="acordion-contenido-img" src="./img/cliente_01.jpg">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Precio <strong>3500 .-</strong></p>
-            <button class="btn animacion"><span>Agregar</span></button>
+        <div class="acordion-list">
+            <!-- <div class="acordion-list-titulo">Toroballo</div>
+            <button class="acordion" onclick="acordion_click(this)">Cervezas Artesanales</button>
+            <div class="acordion-contenido">
+                <img class="acordion-contenido-img" src="./img/item_01.png">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Precio <strong>3500 .-</strong></p>
+                <button class="btn animacion"><span>Agregar</span></button>
+            </div> -->
         </div>
-        <button class="acordion" onclick="acordion_click(this)">Toroballo</button>
-        <div class="acordion-contenido">
-            <img class="acordion-contenido-img" src="./img/cliente_01.jpg">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Precio <strong>3500 .-</strong></p>
-            <button class="btn animacion"><span>Agregar</span></button>
-        </div>
+                
     </main>
 
-    
     <!-- Pie ------------------------------------------>
     <footer>
 

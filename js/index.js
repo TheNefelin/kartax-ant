@@ -35,23 +35,6 @@ function navBarBtn_click() {
 
 // -- Acordion ------------------------------------------------------------->
 // ------------------------------------------------------------------------->
-//  var acc = document.getElementsByClassName("acordion");
-//  var i;
-
-//  console.log(acc.length);
-
-//  for (i = 0; i < acc.length; i++) {
-//    acc[i].addEventListener("click", function() {
-//      this.classList.toggle("active");
-//      var panel = this.nextElementSibling;
-//      if (panel.style.maxHeight) {
-//        panel.style.maxHeight = null;
-//      } else {
-//        panel.style.maxHeight = panel.scrollHeight + "px";
-//      } 
-//    });
-//  }
-
 window.addEventListener("resize", () => {
     accord = document.getElementsByClassName("acordion");
 
@@ -72,8 +55,41 @@ function acordion_click(obj) {
     } else {
         hijo.style.maxHeight = hijo.scrollHeight + "px";
     }
-}
+};
 
+function acordion_llenarItems(){
+    let addItems = document.querySelector(".acordion-list");
+    let newItem = `<div key=${1} value="${1}" class="acordion-list-titulo">${"Cervezas Artesanales"}</div>`;
+
+    dataItem.map((d) => {
+        newItem = newItem + `<button class="acordion" onclick="acordion_click(this)">${d.nombre}</button>`;
+        newItem = newItem + `<div class="acordion-contenido">`;
+        newItem = newItem + `<img class="acordion-contenido-img" src="${d.link}">`;
+        newItem = newItem + `<p>${d.descripcion}</p>`;
+        newItem = newItem + `<p>Precio <strong>${d.precio} .-</strong></p>`;
+        newItem = newItem + `<button value=${d.id} class="btn animacion" onclick="agregarItem_click(this)"><span>Agregar</span></button></div>`;
+    });
+
+    addItems.innerHTML = newItem;
+};
+
+let carrito = [];
+
+function agregarItem_click(obj) {
+    let carritoCant = document.querySelector(".carrito-cont");
+    
+    dataItem.map((d, index, arr) => {
+        if (d.id == obj.value) {
+            carrito.push(d);
+            console.log(d);
+            console.log(arr);
+        }
+    });
+
+    carrito.sort;
+    carritoCant.textContent = carrito.length;
+    console.log(carrito);
+};
 
 
 // ------------------------------------------------------------------------->

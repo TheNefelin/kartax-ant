@@ -17,14 +17,19 @@
 }
 
 :root {
-    --colorNavBarFondo: rgb(0, 0, 0);
+    /* --colorNavBarFondo: rgb(0, 0, 0);
     --colorLink: white;
     --colorLinkHover: rgb(255, 169, 58);
-    --colorTesting: green;
-
+    --colorTesting: rgb(121, 7, 24);
+    --colorTransparente: rgba(255, 255, 255, 0.936);
     --colorBtn: white;
     --colorBtnBack: black;
-
+    --colorCarritoCont: red; */
+    --colorNavBarFondo: rgb(9, 13, 24);
+    --colorLink: white;
+    --colorLinkHover: rgb(252, 161, 32);
+    --colorLLamativo: rgb(190, 0, 29);
+    --colorTransparente: rgba(255, 255, 255, 0.7);
     --colorCarritoCont: red;
 }
 
@@ -32,6 +37,15 @@
 /* ---------------------------------------------------------------- */
 * {
     font-family: fuenteGeneral;
+}
+
+body {
+    background-color: var(--colorBtn);
+    background-image: url("../img/2.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 a {
@@ -46,15 +60,15 @@ a:hover {
 }
 
 .btn {
-	/* display: inline-flex;
-	align-items: center;
-	justify-content: center; */
+	/* display: inline-flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
 	width: 80%;
 	height: 40px;
     max-width: 300px;
     margin: 10px auto 10px auto;
-	background: var(--colorBtnBack);
-	color: var(--colorBtn);
+	background: var(--colorNavBarFondo);
+	color: var(--colorLink);
 	border: none;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -161,7 +175,10 @@ a:hover {
     0% {
         color: var(--colorLinkHover);
     }
-    50% {
+    33.3% {
+        color: var(--colorLLamativo);
+    }
+    66.6% {
         color: var(--colorLink);
     }
     100% {
@@ -236,31 +253,43 @@ a:hover {
 /* ---------------------------------------------------------------- */
 .main-contenedor {
     position: relative;
-    top: 70px;
+    top: 60px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 /* -- Categorias -------------------------------------------------- */
 /* ---------------------------------------------------------------- */
-/* .manu-categ {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    height: 150px;
-    align-items: center;
-    background-color: yellow;
+.carrusel-contenedor {
+    background-color: var(--colorTransparente);
+    height: 300px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--colorLink);
 }
-
-.menu-categ-prev {
-    background-color: red;
-}
-
-.menu-categ-next {
-    background-color: red;
-} */
 
 /* -- Acordion ---------------------------------------------------- */
 /* ---------------------------------------------------------------- */
+.acordion-list {
+    max-width: 1000px;
+    margin: 10px;
+}
+
+.acordion-list-titulo {
+    background-color: var(--colorLLamativo);
+    color: var(--colorLink);
+    text-align: center;
+    outline: none;
+    padding: 10px;
+}
+
 .acordion {
-    background-color: #eee;
-    color: #444;
+    background-color: var(--colorNavBarFondo);
+    color: var(--colorLink);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -269,11 +298,10 @@ a:hover {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-    max-width: 1000px;
-  }
+}
 
 .active, .acordion:hover {
-    background-color: #ccc;
+    background-color: var(--colorLinkHover);
 }
 
 .acordion:after {
@@ -290,7 +318,7 @@ a:hover {
 
 .acordion-contenido {
     padding: 0 18px;
-    background-color: rgba(255, 255, 255, 0.859);
+    background-color: var(--colorTransparente);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -303,6 +331,9 @@ a:hover {
     margin: auto;
     padding-top: 10px;
 }
+
+/* -- Footer ------------------------------------------------------ */
+/* ---------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------- */
 /* ---------------------------------------------------------------- */

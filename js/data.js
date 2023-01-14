@@ -21,6 +21,67 @@ const dataLinksMenu = [
     }
 ];
 
+const dataCateg = [
+    {
+        id: 1,
+        nombre: "Para Beber",
+        link: "../img/grupo_01.jpg"
+    }
+    ,{
+        id: 2,
+        nombre: "Para Comer",
+        link: "../img/grupo_02.jpg"
+    }
+    ,{
+        id: 3,
+        nombre: "Cafeteria",
+        link: "../img/grupo_03.jpg"
+    }    
+];
+
+const dataItemCateg = [
+    {
+        id: 1,
+        nombre: "Cervezas Artesanales"
+    }
+    ,{
+        id: 2,
+        nombre: "Cervezas Envasadas"
+    }
+    ,{
+        id: 3,
+        nombre: "Para Comer",
+        link: "../img/grupo_03.jpg"
+    }    
+];
+
+const dataItem = [
+    {
+        id: 1,
+        nombre: "Blod",
+        descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
+        precio: 5500,
+        link: "/img/item_01.png",
+        idCaget: 1
+    }
+    ,{
+        id: 2,
+        nombre: "Santa Sed",
+        descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
+        precio: 4800,
+        link: "/img/item_02.png",
+        idCaget: 1
+    }
+    ,{
+        id: 3,
+        nombre: "Pils",
+        descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
+        precio: 4500,
+        link: "/img/item_03.png",
+        idCaget: 1
+    }
+];
+
 const dataLinks = [
     {
         id: 1,
