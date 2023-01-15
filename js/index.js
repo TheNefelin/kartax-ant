@@ -134,7 +134,7 @@ function acordion_click(obj) {
 
 // Se carga el acorion de productos por sub cateogira
 // idCateg = categoria superior (Carrusel)
-// indexCategItem = Categoria de items (Titulo Rojo)
+// d.idCateg = Categoria de items (Titulo Rojo)
 function acordion_llenarItems(idCateg){
     let newItem = "";
 
