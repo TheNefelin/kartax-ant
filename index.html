@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="./img/logo_01.ico">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/index.css">
 
@@ -15,7 +16,7 @@
     <!-- NavBar --------------------------------------->
     <header>
         <nav class="navBar-contenedor">
-            <a class="navBar-logo" href="#" onclick="acordion_llenarItems()">
+            <a class="navBar-logo" href="#">
                 <img src="./img/logo_01.png" alt="">
                 <h1>Kartax</h1>
             </a>
@@ -34,28 +35,54 @@
     <main class="main-contenedor">
 
         <!-- Carrito ---------------------------------->
-        <button class="carrito">
+        <button class="carrito" onclick="comanda_ver()">
             <img src="./img/cart.svg">
             <span class="carrito-cont">0</span>
         </button>
 
+        <!-- Carruzel --------------------------------->
+        <div class="carruzel-contenedor">
+            <button onclick="carrusel_btnMover_click(-1)">&#10094;</button>
+
+            <div class="carruzel">
+                <div class="prueba" style="background-image: url('../img/grupo_01.jpg');">
+                    <h1>Categoria</h1>
+                </div>
+                <div class="prueba" style="background-image: url('../img/grupo_02.jpg');">
+                    <h1>Categoria</h1>
+                </div>
+            </div>
+
+            <button onclick="carrusel_btnMover_click(1)">&#10095;</button>
+        </div>
+
         <!-- Acordion  -------------------------------->
         <div class="acordion-list">
-            <!-- <div class="acordion-list-titulo">Toroballo</div>
-            <button class="acordion" onclick="acordion_click(this)">Cervezas Artesanales</button>
-            <div class="acordion-contenido">
-                <img class="acordion-contenido-img" src="./img/item_01.png">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Precio <strong>3500 .-</strong></p>
-                <button class="btn animacion"><span>Agregar</span></button>
-            </div> -->
+            <!-- Aqui se cargan todos los productos por categoria desde acordion_llenarItems() -->
         </div>
                 
+        <!-- Comanda  --------------------------------->
+        <div class="comanda">
+            <div class="comanda-btn-cerrar">
+                <button class="btn animacion" onclick="comanda_ocultar()"><span>X</span></button>
+            </div>
+            <ul class="comanda-items">
+                <!-- Aqui se carga la lista de pedidos (la comanda) desde agregarItem_click(obj) -->
+            </ul>
+            <div class="comanda-seccionPedir">
+                <div class="comanda-item-total">TOTAL: 0</div>
+                <div class="comanda-btn-pedir">
+                    <button class="btn animacion"><span>Hacer Pedido</span></button>
+                </div>        
+            </div>
+        </div>
     </main>
 
     <!-- Pie ------------------------------------------>
     <footer>
-
+        <audio autoplay>
+            <source src="./audio/Remnant_ From_the_Ashes.mp3" type="audio/mpeg">
+        </audio>
     </footer>
 
     <!------------------------------------------------->

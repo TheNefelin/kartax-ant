@@ -30,7 +30,9 @@
     --colorLinkHover: rgb(252, 161, 32);
     --colorLLamativo: rgb(190, 0, 29);
     --colorTransparente: rgba(255, 255, 255, 0.7);
-    --colorCarritoCont: red;
+
+    --colorComandaFondo: black;
+    --colorComandaLinea: rgb(28, 28, 28);
 }
 
 /* -- Config Elementos Generales ---------------------------------- */
@@ -39,6 +41,7 @@
     font-family: fuenteGeneral;
 }
 
+/* -- body -----------------------------*/
 body {
     background-color: var(--colorBtn);
     background-image: url("../img/2.png");
@@ -48,6 +51,7 @@ body {
     background-position: center;
 }
 
+/* -- a --------------------------------*/
 a {
     text-decoration: none;
     color: var(--colorLink);
@@ -59,10 +63,8 @@ a:hover {
     font-size: 1.2em;
 }
 
+/* -- button ---------------------------*/
 .btn {
-	/* display: inline-flex; */
-	/* align-items: center; */
-	/* justify-content: center; */
 	width: 80%;
 	height: 40px;
     max-width: 300px;
@@ -104,6 +106,7 @@ a:hover {
 	left: 0;
 }
 
+/* -- Carrito --------------------------*/
 .carrito {
     position: fixed;
     right: 0;
@@ -113,6 +116,16 @@ a:hover {
     border-radius: 25% 0 0 25%;
     cursor: pointer;
     z-index: 10;
+    transition: 0.3s;
+}
+
+.carrito_ocultar {
+    background-color: red;
+    display: none;
+}
+
+.carrito:hover {
+    transform: scale(1.2);
 }
 
 .carrito-cont {
@@ -123,7 +136,7 @@ a:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color: var(--colorCarritoCont);
+    background-color: var(--colorLLamativo);
     color: var(--colorLink);
     border: 2px solid var(--colorLink);
     display: flex;
@@ -311,7 +324,7 @@ a:hover {
     float: right;
     margin-left: 5px;
 }
-  
+
 .active:after {
     content: "\2212";
 }
@@ -332,9 +345,126 @@ a:hover {
     padding-top: 10px;
 }
 
-/* -- Footer ------------------------------------------------------ */
+/* -- Comanda ----------------------------------------------------- */
 /* ---------------------------------------------------------------- */
+.comanda {
+    position: fixed;
+    max-width: 1000px;
+    width: 100%;
+    height: 80%;
+    background-color: var(--colorComandaFondo);
+    color: var(--colorLink);
+    border-radius: 5px;
+    display: none;
+    z-index: 3;
+}
+
+.comanda_noOcultar {
+    display: block;
+}
+
+.comanda-btn-cerrar {
+    width: 50px;
+    margin-left: auto;
+}
+
+.comanda-btn-pedir {
+    display: flex;
+    margin-bottom: 10PX;
+}
+
+.comanda-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comanda-item {
+    text-decoration: none;
+    height: 30px;
+    border: 1px solid var(--colorComandaLinea);
+    margin-top: -1px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 70px 0 10px;
+}
+
+.comanda-item:hover{
+    background-color: var(--colorLLamativo);
+}
+
+.comanda-item-total {
+    padding: 20px;
+    text-align: center;
+    color: var(--colorLinkHover);
+}
+
+.comanda-item-eliminar {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: var(--colorLLamativo);
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.comanda-seccionPedir {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* -- Carruzel ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+.carruzel-contenedor {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carruzel-contenedor button {
+    border: none;
+    text-decoration: none;
+    background-color: var(--colorTransparente);
+    color: var(--colorComandaLinea);
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carruzel-contenedor button:hover {
+    background-color: var(--);
+    color: var(--colorLink);
+    background-color: var(--colorLinkHover);
+}
+
+.carruzel {
+    border: 1px solid white;
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+}
+
+.prueba {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.prueba h1 {
+    margin-left: auto;
+    position: absolute;
+    justify-content: center;
+    color: white;
+}
 
 /* ---------------------------------------------------------------- */
 /* ---------------------------------------------------------------- */
+
 
