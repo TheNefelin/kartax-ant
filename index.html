@@ -42,18 +42,15 @@
 
         <!-- Carruzel --------------------------------->
         <div class="carruzel-contenedor">
-            <button onclick="carrusel_btnMover_click(-1)">&#10094;</button>
-
             <div class="carruzel">
-                <div class="prueba" style="background-image: url('../img/grupo_01.jpg');">
-                    <h1>Categoria</h1>
-                </div>
-                <div class="prueba" style="background-image: url('../img/grupo_02.jpg');">
-                    <h1>Categoria</h1>
-                </div>
+                <!-- Aqui se cargan los items del carruzel desde getCarruselCateg() -->
             </div>
 
-            <button onclick="carrusel_btnMover_click(1)">&#10095;</button>
+            <div class="carruzel-btn-contenedor">
+                <button class="carruzel-btnL" onclick="carrusel_btnMover_click(-1)">&#10094;</button>
+                <button class="carruzel-btnR" onclick="carrusel_btnMover_click(1)">&#10095;</button>
+            </div>
+            
         </div>
 
         <!-- Acordion  -------------------------------->

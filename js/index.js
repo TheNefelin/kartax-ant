@@ -1,14 +1,15 @@
 // -- NavBar --------------------------------------------------------------->
 // ------------------------------------------------------------------------->
 
-// Carga los links del menu principal
+// inicializa
 window.onload = inicializarSitio();
 
 function inicializarSitio() {
     getMenuLinks();
-    acordion_llenarItems();
+    getCarruselCateg();
 };
 
+// Carga los inks del menu principal
 function getMenuLinks() {
     let navBarlinks = document.querySelector(".navBar-links");
     let nElemento = "";
@@ -36,23 +37,64 @@ function navBarBtn_click() {
 
 // -- Carrusel ------------------------------------------------------------->
 // ------------------------------------------------------------------------->
+
+// Carga carrusel
+function getCarruselCateg() {
+    let carruzel = document.querySelector(".carruzel");
+    let idCateg = 0;
+    newItem = "";
+    
+    dataCateg.map((d, index) => {
+        if (d.id === 1) {
+            newItem = newItem + `<div value=${index + 1} id=${d.id} class="carruzel-item" style="background-image: url('${d.link}');">`;
+            idCateg = d.id;
+        }else{
+            newItem = newItem + `<div value=${index + 1} id=${d.id} class="carruzel-item carruzel-item_ocultar" style="background-image: url('${d.link}');">`;
+        }
+
+        newItem = newItem + `<h1>${d.nombre}</h1></div>`;
+    });
+
+    carruzel.innerHTML = newItem;
+    acordion_llenarItems(idCateg);
+}
+
+// Mover carrusel
 let carruselPos = 0;
 
 function carrusel_btnMover_click(mov){
     carruselPos = carruselPos + mov;
-    console.log(carruselPos);
 
-    let items = document.querySelector(".carruzel").childElementCount;
-    console.log(items);
-}
+    let items = document.querySelector(".carruzel").childNodes;
+    
+    if (carruselPos > items.length -1) {
+        carruselPos = 0;
+    }else if (carruselPos == -1) {
+        carruselPos = items.length -1;
+    }
+
+    let idCateg = 0;
+
+    items.forEach((d, index) => {
+        if (carruselPos == index) {
+            d.classList.remove("carruzel-item_ocultar");
+            d.classList.add("carruzel-item_noOcultar");
+            idCateg = d.id;
+        }else{
+            d.classList.add("carruzel-item_ocultar");
+            d.classList.remove("carruzel-item_noOcultar")
+        }
+    });
+
+    acordion_llenarItems(idCateg);
+};    
 
 // -- Acordion ------------------------------------------------------------->
 // ------------------------------------------------------------------------->
 
-// Cierra todos los acordiones abiertos 
 // let anchoWin = $(window).width();
 
-// window.addEventListener("resize", (event) => {
+// window.addEventListener("resize", () => {
 //     if (anchoWin != $(window).width()) {
 //         accord = document.getElementsByClassName("acordion");
 
@@ -60,10 +102,23 @@ function carrusel_btnMover_click(mov){
 //             if (accord[i].nextElementSibling.style.maxHeight) {
 //                 accord[i].nextElementSibling.style.maxHeight = null
 //                 accord[i].classList.remove("active");
+
 //             }  
 //         }
 //     };
 // });
+
+// Cierra todos los acordiones abiertos 
+function cerrarAcordionesAbiertos() {
+    accord = document.getElementsByClassName("acordion");
+
+    for (let i = 0; i < accord.length; i++) {
+        if (accord[i].nextElementSibling.style.maxHeight) {
+            accord[i].nextElementSibling.style.maxHeight = null
+            accord[i].classList.remove("active");
+        }
+    }
+}
 
 // Abre el contenido del acordion seleccionado
 function acordion_click(obj) {
@@ -78,19 +133,29 @@ function acordion_click(obj) {
 };
 
 // Se carga el acorion de productos por sub cateogira
-function acordion_llenarItems(){
-    let addItems = document.querySelector(".acordion-list");
-    let newItem = `<div key=${1} value="${1}" class="acordion-list-titulo">${"Cervezas Artesanales"}</div>`;
+// idCateg = categoria superior (Carrusel)
+// indexCategItem = Categoria de items (Titulo Rojo)
+function acordion_llenarItems(idCateg){
+    let newItem = "";
 
-    dataItem.map((d) => {
-        newItem = newItem + `<button class="acordion" onclick="acordion_click(this)">${d.nombre}</button>`;
-        newItem = newItem + `<div class="acordion-contenido">`;
-        newItem = newItem + `<img class="acordion-contenido-img" src="${d.link}">`;
-        newItem = newItem + `<p>${d.descripcion}</p>`;
-        newItem = newItem + `<p>Precio <strong>${d.precio} .-</strong></p>`;
-        newItem = newItem + `<button value=${d.id} class="btn animacion" onclick="agregarItem_click(this)"><span>Agregar</span></button></div>`;
+    dataCategItem.map((item) => {
+        if (item.idCateg == idCateg){
+            newItem = newItem + `<div key=${idCateg} id="${item.id}" class="acordion-list-titulo">${item.nombre}</div>`;
+
+            dataItem.map((d) => {
+                if (d.idCateg == item.id) {
+                    newItem = newItem + `<button class="acordion" onclick="acordion_click(this)">${d.nombre}</button>`;
+                    newItem = newItem + `<div class="acordion-contenido">`;
+                    newItem = newItem + `<img class="acordion-contenido-img" src="${d.link}">`;
+                    newItem = newItem + `<p>${d.descripcion}</p>`;
+                    newItem = newItem + `<p>Precio <strong>${d.precio} .-</strong></p>`;
+                    newItem = newItem + `<button value=${d.id} class="btn animacion" onclick="agregarItem_click(this)"><span>Agregar</span></button></div>`;
+                }
+            });
+        }
     });
 
+    let addItems = document.querySelector(".acordion-list");
     addItems.innerHTML = newItem;
 };
 
@@ -99,6 +164,8 @@ function acordion_llenarItems(){
 
 // Ver la comanda
 function comanda_ver() {
+    cerrarAcordionesAbiertos()
+
     let objCarrito = document.querySelector(".carrito");
     let objComanda = document.querySelector(".comanda");
 

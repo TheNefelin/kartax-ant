@@ -34,31 +34,41 @@ const dataCateg = [
     }
     ,{
         id: 2,
-        nombre: "Para Comer",
+        nombre: "Para chanchear",
         link: "./img/grupo_02.jpg"
     }
     ,{
         id: 3,
-        nombre: "Cafeteria",
+        nombre: "Tablas",
         link: "./img/grupo_03.jpg"
     }    
 ];
 
-const dataItemCateg = [
+const dataCategItem = [
     {
         id: 1,
         nombre: "Cervezas Artesanales",
-        link: "./img/grupo_01.jpg"
+        idCateg: 1
     }
     ,{
         id: 2,
         nombre: "Cervezas Envasadas",
-        link: "./img/grupo_02.jpg"
+        idCateg: 1
     }
     ,{
         id: 3,
-        nombre: "Para Comer",
-        link: "./img/grupo_03.jpg"
+        nombre: "Hamburguesas",
+        idCateg: 2
+    }
+    ,{
+        id: 4,
+        nombre: "Completos",
+        idCateg: 2
+    }
+    ,{
+        id: 5,
+        nombre: "De la Casa",
+        idCateg: 3
     }
 ];
 
@@ -69,7 +79,7 @@ const dataItem = [
         descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
         precio: 5500,
         link: "./img/item_01.png",
-        idCaget: 1,
+        idCateg: 1,
         estado: true
     }
     ,{
@@ -78,7 +88,7 @@ const dataItem = [
         descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
         precio: 4800,
         link: "./img/item_02.png",
-        idCaget: 1,
+        idCateg: 1,
         estado: true
     }
     ,{
@@ -87,7 +97,16 @@ const dataItem = [
         descripcion: "nace de lupulo y cebada, y vive en una botella encerrada, puede ser morena o dorada, puede ser de trigo o cereza, para ser sincero sin rodeo digo, buena amiga es la cerveza",
         precio: 4500,
         link: "./img/item_03.png",
-        idCaget: 1,
+        idCateg: 1,
+        estado: true
+    }
+    ,{
+        id: 4,
+        nombre: "NO Tiene Dato",
+        descripcion: "YA",
+        precio: 0,
+        link: "",
+        idCateg: 2,
         estado: true
     }
 ];

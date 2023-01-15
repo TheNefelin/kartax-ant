@@ -44,7 +44,7 @@
 /* -- body -----------------------------*/
 body {
     background-color: var(--colorBtn);
-    background-image: url("../img/2.png");
+    background-image: url("../img/fondo_04.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -110,7 +110,7 @@ a:hover {
 .carrito {
     position: fixed;
     right: 0;
-    bottom: 50px;
+    bottom: 100px;
     background-color: var(--colorLinkHover);
     border: none;
     border-radius: 25% 0 0 25%;
@@ -120,7 +120,6 @@ a:hover {
 }
 
 .carrito_ocultar {
-    background-color: red;
     display: none;
 }
 
@@ -268,28 +267,94 @@ a:hover {
     position: relative;
     top: 60px;
     margin-bottom: 50px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-/* -- Categorias -------------------------------------------------- */
+
+/* -- Carrusel Categorias ----------------------------------------- */
 /* ---------------------------------------------------------------- */
-.carrusel-contenedor {
-    background-color: var(--colorTransparente);
-    height: 300px;
-    padding: 20px;
+.carruzel-contenedor {
+    max-width: 1000px;
     width: 100%;
-    margin-bottom: 10px;
+}
+
+.carruzel-btn-contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carruzel-btn-contenedor button {
+    border: none;
+    text-decoration: none;
+    background-color: var(--colorLink);
+    color: var(--colorBtn);
+    font-size: 60px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 70px;
+    border-radius: 50%;
+    margin: -130px 20px 60px 20px;
+    border: 1px solid var(--colorComandaLinea);
+    z-index: 1;
+}
+
+.carruzel-contenedor button:hover {
     color: var(--colorLink);
+    background-color: var(--colorLinkHover);
+}
+
+.carruzel {
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+}
+
+.carruzel-item {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.carruzel-item_noOcultar {
+    animation-name: fadeIn;
+}
+
+.carruzel-item_ocultar {
+    animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+ @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.carruzel-item h1 {
+    margin-left: 10px;
+    text-shadow: 0 0 3px var(--colorNavBarFondo), 0 0 5px var(--colorNavBarFondo);
+    color: var(--colorLinkHover);
+    background: linear-gradient(90deg, var(--colorLink) 0%, rgba(255, 255, 255, 0.577) 50%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px;
+    border-radius: 4px;
 }
 
 /* -- Acordion ---------------------------------------------------- */
 /* ---------------------------------------------------------------- */
 .acordion-list {
     max-width: 1000px;
-    margin: 10px;
+    margin: 0 10px 20px 10px;
 }
 
 .acordion-list-titulo {
@@ -298,6 +363,7 @@ a:hover {
     text-align: center;
     outline: none;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .acordion {
@@ -414,54 +480,6 @@ a:hover {
     position: absolute;
     width: 100%;
     bottom: 0;
-}
-
-/* -- Carruzel ---------------------------------------------------- */
-/* ---------------------------------------------------------------- */
-.carruzel-contenedor {
-    max-width: 1000px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.carruzel-contenedor button {
-    border: none;
-    text-decoration: none;
-    background-color: var(--colorTransparente);
-    color: var(--colorComandaLinea);
-    font-size: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.carruzel-contenedor button:hover {
-    background-color: var(--);
-    color: var(--colorLink);
-    background-color: var(--colorLinkHover);
-}
-
-.carruzel {
-    border: 1px solid white;
-    width: 100%;
-    min-height: 300px;
-    position: relative;
-}
-
-.prueba {
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-}
-
-.prueba h1 {
-    margin-left: auto;
-    position: absolute;
-    justify-content: center;
-    color: white;
 }
 
 /* ---------------------------------------------------------------- */
