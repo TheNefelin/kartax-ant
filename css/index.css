@@ -44,7 +44,7 @@
 /* -- body -----------------------------*/
 body {
     background-color: var(--colorBtn);
-    background-image: url("../img/fondo_04.jpg");
+    background-image: url("../img/fondo_01.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -342,7 +342,6 @@ a:hover {
 }
 
 .carruzel-item h1 {
-    margin-left: 10px;
     text-shadow: 0 0 3px var(--colorNavBarFondo), 0 0 5px var(--colorNavBarFondo);
     color: var(--colorLinkHover);
     background: linear-gradient(90deg, var(--colorLink) 0%, rgba(255, 255, 255, 0.577) 50%, rgba(255, 255, 255, 0) 100%);
@@ -403,6 +402,7 @@ a:hover {
     transition: max-height 0.2s ease-out;
     display: grid;
     text-align: justify;
+    margin-bottom: 1px;
   }
 
 .acordion-contenido-img {

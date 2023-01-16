@@ -120,18 +120,6 @@ function cerrarAcordionesAbiertos() {
     }
 }
 
-// Abre el contenido del acordion seleccionado
-function acordion_click(obj) {
-    obj.classList.toggle("active");
-    let hijo = obj.nextElementSibling;
-
-    if (hijo.style.maxHeight) {
-        hijo.style.maxHeight = null;
-    } else {
-        hijo.style.maxHeight = hijo.scrollHeight + "px";
-    }
-};
-
 // Se carga el acorion de productos por sub cateogira
 // idCateg = categoria superior (Carrusel)
 // d.idCateg = Categoria de items (Titulo Rojo)
@@ -157,6 +145,18 @@ function acordion_llenarItems(idCateg){
 
     let addItems = document.querySelector(".acordion-list");
     addItems.innerHTML = newItem;
+};
+
+// Abre el contenido del acordion seleccionado
+function acordion_click(obj) {
+    obj.classList.toggle("active");
+    let hijo = obj.nextElementSibling;
+
+    if (hijo.style.maxHeight) {
+        hijo.style.maxHeight = null;
+    } else {
+        hijo.style.maxHeight = hijo.scrollHeight + "px";
+    }
 };
 
 // -- Carrito y Comanda ---------------------------------------------------->
