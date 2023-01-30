@@ -101,10 +101,10 @@ a:hover {
 /* -- Carrito --------------------------*/
 .carrito {
     position: fixed;
-    right: 0;
+    right: -2px;
     bottom: 100px;
     background-color: var(--colorLinkHover);
-    border: none;
+    border: 2px solid var(--colorLink);
     border-radius: 25% 0 0 25%;
     cursor: pointer;
     z-index: 10;
