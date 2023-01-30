@@ -17,14 +17,6 @@
 }
 
 :root {
-    /* --colorNavBarFondo: rgb(0, 0, 0);
-    --colorLink: white;
-    --colorLinkHover: rgb(255, 169, 58);
-    --colorTesting: rgb(121, 7, 24);
-    --colorTransparente: rgba(255, 255, 255, 0.936);
-    --colorBtn: white;
-    --colorBtnBack: black;
-    --colorCarritoCont: red; */
     --colorNavBarFondo: rgb(9, 13, 24);
     --colorLink: white;
     --colorLinkHover: rgb(252, 161, 32);
@@ -481,6 +473,9 @@ a:hover {
     width: 100%;
     bottom: 0;
 }
+
+/* ---------------------------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------- */
 /* ---------------------------------------------------------------- */
